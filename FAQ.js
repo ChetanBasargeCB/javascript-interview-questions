@@ -114,7 +114,7 @@ console.log("Sum of Array element is",ArraySum([10,20,30])) //60
 
 function isPrime(num){
   // Num is less than 2 like (0,1 or negative) it returns false and function execution breaks
-  
+
     if(num<2) return false
     for(let i =2; i<=Math.sqrt(num);i++){
       if(num%i===0) return false
@@ -122,3 +122,15 @@ function isPrime(num){
     // if No divisors were found 
     return true
 }
+
+//! Q8 Write a Program to find Factorial of a given Number
+
+// In this code we use Recursion 
+// Recursion => The function calls itself.
+
+function Factorial(num){
+  if(num===1 ) return 1 
+  //Recursion happens here
+  return num*Factorial(num-1)
+}
+console.log(Factorial(5)) //120
