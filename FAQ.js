@@ -148,3 +148,17 @@ function FactorialNum(num){
   return result;
 }
 console.log(FactorialNum(5))//120
+
+//! 9 Write a Program for Count Vowels in String
+
+function CountVowels(str){
+  let Vowels ="aeiouAEIOU"
+  let count = 0;
+  for(let i=0;  i<str.length; i++){
+    if(Vowels.includes(str[i])){
+      count++
+    }
+  }
+  return count
+}
+console.log(CountVowels("Chetan Basarge")) //5
