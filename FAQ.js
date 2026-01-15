@@ -109,3 +109,16 @@ function ArraySum(arr){
 }
 console.log("Sum of Array element is",ArraySum([10,20,30])) //60
 
+//! Q7. Check if the given Number is  Prime or not
+ // What is Prime Number=> Number is only  divided 1 and itself & reminder get 0
+
+function isPrime(num){
+  // Num is less than 2 like (0,1 or negative) it returns false and function execution breaks
+  
+    if(num<2) return false
+    for(let i =2; i<=Math.sqrt(num);i++){
+      if(num%i===0) return false
+    }
+    // if No divisors were found 
+    return true
+}
