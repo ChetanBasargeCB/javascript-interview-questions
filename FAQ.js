@@ -127,6 +127,7 @@ function isPrime(num){
 
 // In this code we use Recursion 
 // Recursion => The function calls itself.
+//? Solution-1 Using Recursion method
 
 function Factorial(num){
   if(num===1 ) return 1 
@@ -134,3 +135,16 @@ function Factorial(num){
   return num*Factorial(num-1)
 }
 console.log(Factorial(5)) //120
+
+//? Solution-2 without using built-in method
+
+function FactorialNum(num){
+  let result = 1;
+  // for loop that runs from i = 1 to i = num.
+  // if we use here i = 0 then multiplication is not works
+  for(let i =1;i<=num;i++){
+    result *= i
+  }
+  return result;
+}
+console.log(FactorialNum(5))//120
