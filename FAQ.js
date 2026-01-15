@@ -67,7 +67,7 @@ function RemoveDuplicate(str){
 console.log(RemoveDuplicate("Helloo"))
 
 //!Q5 Find Maximum Number in Array 
-//? Solution-1 Using built-in method
+//? Solution-1 Using Math() built-in method
 function FindmaxNum(arr){
   // Math.max() is automatically finds and returns maximum value in the array
   return Math.max(...arr)
@@ -86,4 +86,26 @@ function LargestNum(arr){
   }
 return max
 }
-console.log("Maximum num in the Array Using loop is",LargestNum([1,2,3,4,5]))
+console.log("Maximum num in the Array Using loop is",LargestNum([1,2,3,4,5])) //5
+
+//! Q6 Sum of Array Elements
+//? Solution-1 Using reduce() built-in method
+
+function SumOfArray(arr){
+  // reduce() is an array method that combines all array element in singal value
+    return arr.reduce((acc,curr)=>acc+curr)
+}
+
+console.log("Sum of Array element Using built-in method",SumOfArray([10,20,30])) //60
+
+//? Solution-2 without using built-in method
+
+function ArraySum(arr){
+  let sum = 0;
+  for(let i=0; i<arr.length;i++){
+    sum += arr[i]
+  }
+  return sum
+}
+console.log("Sum of Array element is",ArraySum([10,20,30])) //60
+
