@@ -65,3 +65,25 @@ function RemoveDuplicate(str){
 }
 
 console.log(RemoveDuplicate("Helloo"))
+
+//!Q5 Find Maximum Number in Array 
+//? Solution-1 Using built-in method
+function FindmaxNum(arr){
+  // Math.max() is automatically finds and returns maximum value in the array
+  return Math.max(...arr)
+}
+console.log("Maximum Num in the Array is",FindmaxNum([1,2,3,4]))
+
+
+//? Solution-2 Without built-in 
+function LargestNum(arr){
+  let max=arr[0];
+  for(let i=0; i<arr.length;i++){
+    // if blocks only runs  max when less than arr[i]
+    if(max<arr[i]){
+      max=arr[i]
+    }
+  }
+return max
+}
+console.log("Maximum num in the Array Using loop is",LargestNum([1,2,3,4,5]))
