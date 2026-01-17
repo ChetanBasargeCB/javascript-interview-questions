@@ -149,7 +149,7 @@ function FactorialNum(num){
 }
 console.log(FactorialNum(5))//120
 
-//! 9 Write a Program for Count Vowels in String
+//! Q9 Write a Program for Count Vowels in String
 
 function CountVowels(str){
   let Vowels ="aeiouAEIOU"
@@ -162,3 +162,29 @@ function CountVowels(str){
   return count
 }
 console.log(CountVowels("Chetan Basarge")) //5
+
+//! Q10 Write a javascript function that takes an array of numbers and
+//!  returns a new array with only the even numbers.
+
+//? Solution-1 Using filter() method
+// filter method is used to apply condition on each element of the array 
+// it return only the element that have pass the condition
+
+function EvenArray(arr){
+  return arr.filter((item)=>item%2===0)
+
+}
+console.log(EvenArray([1,2,3,4,5])) //[2,4]
+
+//? Solution-2 With-out Using filter() method
+
+function FindEven(arr){
+  let result=[];
+  for(let i=0; i<arr.length;i++){
+    if(arr[i]%2 === 0){
+      result.push(arr[i])
+    }
+  }
+  return result
+}
+console.log(FindEven([1,2,3,4,5])) //[2,4]
