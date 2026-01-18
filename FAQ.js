@@ -188,3 +188,72 @@ function FindEven(arr){
   return result
 }
 console.log(FindEven([1,2,3,4,5])) //[2,4]
+
+//! Q11 Write a Program to Merge Two Arrays
+
+//? Solution-1 with Spread Operator
+
+function MergeArray(arr1,arr2){
+   let Merged = [...arr1,...arr2]
+   return Merged
+}
+console.log(MergeArray([1,2,3],[4,5]))  // [1,2,3,4,5]
+
+//? Solution-2 Without built-in Methods
+
+function MergedArray(arr1,arr2){
+  let Merged = [];
+  //loop for first Array
+  for(let i=0;i<arr1.length;i++){
+    Merged.push(arr1[i])
+  }
+  //loop for Second Array
+  for(let i=0;i<arr2.length;i++){
+    Merged.push(arr2[i])
+  }
+  return Merged
+}
+
+console.log(MergedArray([1,2,3],[4,5,6]))  // [1,2,3,4,5,6]
+
+//! Q12.Write a Program Find Second Largest Number
+
+//? Solution 1 Using Sort() Method
+// sort() method is used to arrange array element in accending/deccending order
+
+function FindSecondLargest(arr){
+  // here sort() will arrange arr in deccending order 
+  let result = arr.sort((a,b)=>b-a)
+  if(result.length<2){
+    return  "Array must contain at least two numbers";
+  }
+  return result[1]
+}
+console.log(FindSecondLargest([10,5,20,15])) //15
+
+
+//? Solution-2 without Using Sort() Method
+
+function SecondLargest(arr){
+  let largest = arr[0];
+  // First loop: find largest
+  for(let i=0; i<arr.length;i++){
+    if(largest<arr[i]){
+       largest = arr[i]
+    }
+  }
+
+  let second = -Infinity
+
+  //-Infinity is a special numeric value in JavaScript 
+  // It represents a number smaller than any other 
+  
+  // Second loop: for second largest
+  for(let i=0;i<arr.length; i++){
+    if(arr[i]>second && arr[i]<largest){
+      second = arr[i]
+    }
+  }
+  return second
+}
+console.log(SecondLargest([10,5,20,15])) //15
