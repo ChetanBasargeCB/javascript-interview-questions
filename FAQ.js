@@ -32,6 +32,8 @@ function isPalindrome(str) {
 }
 console.log(isPalindrome("madam"));
 
+//! **-----> Array Based Logical Questions <------** //!
+
 //! Q3 Remove Duplicates from Array
 function uniqueArr(arr){
   let result = [];
@@ -257,3 +259,83 @@ function SecondLargest(arr){
   return second
 }
 console.log(SecondLargest([10,5,20,15])) //15
+
+//! Q13 Write a code for Flatten a nested array
+// Flatting Array means converting nested arry into singal array
+function Faltarry(arr){
+   let faltten = arr.flat(Infinity)
+   return faltten
+}
+console.log(Faltarry([1,[2,[3,4],[5]]])) // [1,2,3,4,5]
+
+
+//! Q14 Write a code for sort and merge two array
+//? BuiltIn method sort()
+
+function MergeArray(arr1,arr2){
+  const result = [...arr1,...arr2].sort(((a,b)=>a-b));
+  return result
+}
+console.log(MergeArray([1,3,5],[2,4,6])) // [1,2,3,4,5,6]
+
+//? Without BuiltIn Methods
+
+function MergeArraY(arr1,arr2){
+  let result = [];
+  for(let i = 0; i<arr1.length;i++){
+    result.push(arr1[i])
+  }
+    for(let i = 0; i<arr1.length;i++){
+    result.push(arr2[i])
+  }
+ return result.sort((a,b)=>a-b)
+}
+console.log(MergeArraY([1,3,5],[2,4,6])) // [1,2,3,4,5,6]
+
+//! Q15 Find common element in two array
+
+function CommonElement(arr1,arr2){
+  let result = [];
+  for(let i=0; i<arr1.length; i++){
+    if(arr1.includes(arr2[i])){
+      result.push(arr2[i])
+    }
+  }
+
+  return result
+}
+console.log(CommonElement([1,2,3], [1,3])) // [1,3]
+
+//! Q16 Check array is is Sorted ?
+function isSorted(arr){
+  return arr === arr.sort((a,b)=>a-b)
+}
+
+console.log(isSorted([1,2,3,4])) // true
+
+//! Q17 Write program to multiplicationTable
+//? Using Builtin Method()
+function multiplicationTable(num){
+  const table = [1,2,3,4,5,6,7,8,9,10]
+  const result = table.map((item)=>item*num)
+  return result.join(" ")
+}
+console.log(multiplicationTable(2)) // it gives multiplication table
+
+//? Without Builtin Method 
+
+function Multiplication(num){
+  let result=[]
+  for(let i=1;i<=10;i++){
+    result.push(num*i)
+  }
+  return result.join(" ")
+}
+console.log(Multiplication(2)) // it also gives also same result
+
+//! Q 18 Write program to generate random num between two values
+function RandomNum (max,min){
+  const num = Math.floor(Math.random()*(max-min+1))+min
+  return num
+}
+console.log(RandomNum(10,15))
